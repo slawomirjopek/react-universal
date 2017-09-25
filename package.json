@@ -1,0 +1,35 @@
+{
+  "name": "react-universal",
+  "version": "1.0.0",
+  "description": "React universall app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slawomirjopek/react-universal.git"
+  },
+  "author": "Sławomir Jopek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slawomirjopek/react-universal/issues"
+  },
+  "homepage": "https://github.com/slawomirjopek/react-universal#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "http-server": "^0.10.0",
+    "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.15.5",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router": "^4.2.0"
+  }
+}
