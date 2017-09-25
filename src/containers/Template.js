@@ -6,9 +6,11 @@ class Template extends React.Component {
     }
 
     render() {
-        <div className="page-container">
-            App content...
-        </div>
+        return (
+            <div className="page-container">
+                App content...
+            </div>
+        )
     }
 }
 

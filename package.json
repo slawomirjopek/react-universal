@@ -4,8 +4,9 @@
   "description": "React universall app",
   "main": "index.js",
   "scripts": {
-    "build:dev": "cross-env SET NODE_ENV=development & webpack --progress --colors",
-    "build:prod": "cross-env SET NODE_ENV=production & webpack --progress --colors"
+    "build": "webpack -d --progress --colors",
+    "serve": "webpack-dev-server --content-base src/static/ --inline --hot --port 1111",
+    "start": "npm run serve"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,8 @@
     "css-loader": "^0.28.7",
     "http-server": "^0.10.0",
     "style-loader": "^0.18.2",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
   },
   "dependencies": {
     "cross-env": "^5.0.5",
