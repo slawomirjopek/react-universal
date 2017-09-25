@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack -d --progress --colors",
     "serve": "webpack-dev-server --content-base src/static/ --inline --hot --port 1111",
+    "serve:node": "babel-node --presets env src/server.js",
     "start": "npm run serve"
   },
   "repository": {
