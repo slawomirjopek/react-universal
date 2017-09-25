@@ -4,7 +4,8 @@
   "description": "React universall app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:dev": "cross-env SET NODE_ENV=development & webpack --progress --colors",
+    "build:prod": "cross-env SET NODE_ENV=production & webpack --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -22,10 +23,13 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
     "http-server": "^0.10.0",
+    "style-loader": "^0.18.2",
     "webpack": "^3.6.0"
   },
   "dependencies": {
+    "cross-env": "^5.0.5",
     "ejs": "^2.5.7",
     "express": "^4.15.5",
     "react": "^15.6.1",
