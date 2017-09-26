@@ -1,4 +1,5 @@
 const path = require("path");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, '../src'),
@@ -20,8 +21,16 @@ module.exports = {
                         presets: ["env", "react"],
                         plugins: ["transform-object-rest-spread", "async-to-promises"]
                     }
-                }],
+                }]
             }
         ]
-    }
+    },
+    devServer: {
+        historyApiFallback: true,
+    },
+    plugins: [
+        new CopyWebpackPlugin([
+            { from: "client/index.html", to: "../index.html" }
+        ])
+    ]
 };
