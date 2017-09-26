@@ -8,6 +8,11 @@ module.exports = {
         filename: "server.js",
         path: path.resolve(__dirname, "../dist")
     },
+    target: 'node',
+    node: {
+        __dirname: false,
+        __filename: false
+    },
     module: {
         rules: [
             {
@@ -21,5 +26,6 @@ module.exports = {
                 }]
             }
         ]
-    }
+    },
+    externals: nodeExternals()
 };
