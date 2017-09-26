@@ -1,8 +1,9 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import React, { Component } from "react";
 
 import Footer from "../components/template/Footer";
 import Header from "../components/template/Header";
+import NoRoute from "../containers/NoRoute"
 import Routes from "../routes/routes";
 
 class Template extends Component {
@@ -16,6 +17,7 @@ class Template extends Component {
                 <Header/>
                 <Switch>
                     {routes}
+                    <Route component={NoRoute}/>
                 </Switch>
                 <Footer/>
             </div>
