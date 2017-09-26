@@ -8,7 +8,7 @@
     "build:client": "webpack --progress --colors --config ./webpack/webpack.config.client.js",
     "build:server": "webpack --progress --colors --config ./webpack/webpack.config.server.js",
     "clean": "rimraf dist",
-    "serve": "npm run build:client && webpack-dev-server --config ./webpack/webpack.config.client.js --content-base dist/ --open --progress --colors --port 1111",
+    "serve": "npm run build:client && webpack-dev-server --config ./webpack/webpack.config.client.js",
     "start": "npm run build && node dist/server.js"
   },
   "author": "",

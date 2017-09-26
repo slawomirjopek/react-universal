@@ -26,7 +26,11 @@ module.exports = {
         ]
     },
     devServer: {
+        contentBase: "./dist",
         historyApiFallback: true,
+        open: true,
+        port: "11111",
+        progress: true
     },
     plugins: [
         new CopyWebpackPlugin([
