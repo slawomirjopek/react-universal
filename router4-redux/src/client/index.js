@@ -1,12 +1,12 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom";
 
 import Template from "./containers/Template";
 
 ReactDOM.render(
-    <BrowserRouter>
+    <Router>
         <Template/>
-    </BrowserRouter>,
+    </Router>,
     document.getElementById("app")
 );

@@ -17,13 +17,17 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                use: [{
+                use: {
                     loader: 'babel-loader',
                     options: {
                         presets: ['env', 'react'],
                         plugins: ['transform-object-rest-spread']
                     }
-                }]
+                }
+            },
+            {
+                test: /\.(jpg|jpeg|png|gif|svg)$/,
+                loader: 'url-loader',
             }
         ]
     },

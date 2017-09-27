@@ -1,7 +1,7 @@
-import { StaticRouter, matchPath } from 'react-router-dom';
+import { renderToString } from "react-dom/server";
+import { StaticRouter as Router, matchPath } from 'react-router-dom';
 import Express from "express";
 import React from "react";
-import ReactDOM from "react-dom/server";
 import Routes from "../client/routes/routes";
 import Template from "../client/containers/Template";
 
@@ -23,10 +23,10 @@ app.get('*', (req, res) => {
 
     //context is used by react router, empty by default
     let context = {};
-    const html = ReactDOM.renderToString(
-        <StaticRouter context={context} location={req.url}>
+    const html = renderToString(
+        <Router context={context} location={req.url}>
             <Template/>
-        </StaticRouter>,
+        </Router>,
     );
 
     res.send(renderFullPage(html));
