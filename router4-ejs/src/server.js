@@ -10,7 +10,7 @@ const app = Express();
 app.set("port", 3000);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "../views"));
-app.use(Express.static(path.join(__dirname, 'static')));
+app.use(Express.static(path.join(__dirname, '')));
 
 // universal routing and rendering
 app.get("*", (req, res) => {
