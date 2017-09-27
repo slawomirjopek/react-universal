@@ -25,14 +25,19 @@ module.exports = {
             },
             {
                 test: /\.(jpg|jpeg|png|gif|svg)$/,
-                loader: 'url-loader',
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[ext]",
+                        publicPath: "assets/"
+                    }
+                }
             }
         ]
     },
     devServer: {
         contentBase: "./dist",
         historyApiFallback: true,
-        open: true,
         port: "11111",
         progress: true
     },

@@ -6,7 +6,7 @@ module.exports = {
     entry: "./server/server.js",
     output: {
         filename: "server.js",
-        path: path.resolve(__dirname, "../dist")
+        path: path.resolve(__dirname, "../dist/")
     },
     target: 'node',
     node: {
@@ -27,7 +27,13 @@ module.exports = {
             },
             {
                 test: /\.(jpg|jpeg|png|gif|svg)$/,
-                loader: 'url-loader',
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[ext]",
+                        outputPath: "assets/"
+                    }
+                }
             }
         ]
     },

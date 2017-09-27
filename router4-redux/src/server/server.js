@@ -7,6 +7,7 @@ import Template from "../client/containers/Template";
 
 const app = Express();
 app.use("/dist", Express.static("./dist"));
+app.use("/assets", Express.static("./dist/assets"));
 
 app.get('*', (req, res) => {
     // match request url to our React Router paths and grab component
@@ -32,8 +33,8 @@ app.get('*', (req, res) => {
     res.send(renderFullPage(html));
 });
 
-const port = process.env.PORT || 9000;
-app.listen("9000", (req, res) => {
+const port = process.env.PORT || 9001;
+app.listen(port, (req, res) => {
     console.log('app running on localhost:' + port);
 });
 
