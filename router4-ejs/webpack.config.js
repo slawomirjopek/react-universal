@@ -1,4 +1,3 @@
-const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
@@ -8,13 +7,15 @@ module.exports = {
         filename: "bundle.js"
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.(js|jsx)$/,
                 include: path.resolve(__dirname, "src"),
-                loader: "babel-loader",
-                query: {
-                    cacheDirectory: "babel_cache"
+                use: {
+                    loader: "babel-loader",
+                    query: {
+                        presets: ["env", "react"]
+                    }
                 }
             },
             {

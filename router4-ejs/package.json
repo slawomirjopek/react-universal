@@ -4,10 +4,11 @@
   "description": "React universal app",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -d --progress --colors",
-    "serve": "webpack-dev-server --content-base src/static/ --inline --hot --port 1111",
-    "serve:node": "babel-node --presets env src/server.js",
-    "start": "npm run build & npm run serve"
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "webpack --progress --colors --config webpack.config.js",
+    "build:server": "webpack --progress --colors --config webpack.config.server.js",
+    "serve": "npm run build:client && webpack-dev-server --content-base src/static/ --inline --hot --port 1111",
+    "serve:node": "npm run build && node src/static/server.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "express": "^4.15.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "webpack-node-externals": "^1.6.0"
   }
 }
